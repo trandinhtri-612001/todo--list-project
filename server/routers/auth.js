@@ -27,6 +27,7 @@ router.get('/', verifyToken,async(req, res) => {
 })
 
 
+
 // router api/auth/register
 
 // @route POST api/auth/register
@@ -34,7 +35,7 @@ router.get('/', verifyToken,async(req, res) => {
 // @access Public
 router.post('/register', async (req, res) => {
 	const { username, password } = req.body
-
+console.log(username);
 	// Simple validation
 	if (!username || !password)
 		return res
@@ -43,6 +44,8 @@ router.post('/register', async (req, res) => {
 
 	try {
 		// Check for existing user
+		
+		
 		const user = await User.findOne({ username })
 
 		if (user)
@@ -78,7 +81,9 @@ router.post('/register', async (req, res) => {
 // @access Public
 
 router.post('/login', async(req,res)=>{
-const {username, password } = req.body;
+	const { username, password } = req.body;
+	
+	
 //simple validation
 if(!username||!password){
     res.status(400).json({success:false,message:"missing username and/or password"})

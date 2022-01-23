@@ -9,7 +9,7 @@ const cors = require ('cors')
 const ConnectDB = async ()=>{
 
     try {
-		await mongoose.connect(`mongodb+srv://todo_list:${process.env.password}@cluster0.oa0wn.mongodb.net/TodoListData?retryWrites=true&w=majority`,
+		await mongoose.connect(`mongodb+srv://todoapp:${process.env.password}@cluster0.bhtqr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
 			{
 				useNewUrlParser: true,
 				useUnifiedTopology: true,

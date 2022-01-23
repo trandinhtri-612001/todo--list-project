@@ -5,4 +5,4 @@
 export const LOCAL_STOGARE_TOKEN_NAME = 'todolist token'
 
 
-export const apiUrl = process.env.NODE_ENV !== 'http://localhost:5000/api';
+export const apiUrl = 'http://localhost:5000/api';
