@@ -28,20 +28,10 @@ const Profile = () => {
       <td>1</td>
               <td>{user.username}</td>
               <td>{user._id}</td>
-            <td>{user.password}</td>
+            <td></td>
             <id>{user.createdAt}</id>
     </tr>
-    <tr>
-      <td>2</td>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td colSpan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
+
   </tbody>
 </Table>
             

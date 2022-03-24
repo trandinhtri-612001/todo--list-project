@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react'
+import React, {useState, useContext,useEffect} from 'react'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import { Link } from 'react-router-dom'
@@ -6,7 +6,13 @@ import { AuthContext } from '../../contexts/AuthContext'
 import AlertMessage from '../layout/alertmessage'
 const LoginFrom = () => {
 	//context
-	const { loginUser } = useContext(AuthContext);
+		const {
+		authState: { authLoading, isAuthenticated }
+			
+	} = useContext(AuthContext)
+	console.log(isAuthenticated);
+	const { loginUser, loadUser } = useContext(AuthContext);
+
 	
 	const [loginFrom, setloginFrom] = useState({
 		username: '',

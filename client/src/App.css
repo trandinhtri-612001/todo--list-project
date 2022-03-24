@@ -68,8 +68,8 @@ button.post-button.btn:active {
 /* Floating add button */
 .btn-floating {
   position: fixed;
-  right: 3rem;
-  bottom: 3rem;
+  right: 0;
+  bottom: 1rem;
   background: transparent;
   border: none;
 }

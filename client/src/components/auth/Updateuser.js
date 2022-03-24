@@ -12,7 +12,7 @@ const {updateuser, authState:{user}} = useContext(AuthContext);
 
   const [updateuserform, setupdateuserform] = useState({
     _id:user._id,
-    username:'',
+    username:user.username,
     password:'',
     confirmpassword:'',
     oldpassword:'',
@@ -33,6 +33,15 @@ const {updateuser, authState:{user}} = useContext(AuthContext);
      
       }, 3000);
       return 0;
+    } else {
+      if (password == oldpassword) {
+         setalert({ type: 'danger', message: 'The password cannot match the old password' })
+      setTimeout(() => {
+        setalert(null)
+     
+      }, 3000);
+      return 0;
+      }
     }
     try {
       const datasp = await updateuser(updateuserform)

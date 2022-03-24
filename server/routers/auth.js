@@ -129,11 +129,14 @@ try {
 
 		try {
 			const user = await User.findOne({ _id:_id })
-			console.log(user)
+			
 			const verify = await argon2.verify(user.password, oldpassword)
+			
 			if (!verify) {
 				return res.json({success:false, message:'Incorrect user name or oldpassword '})
-			}
+			} 
+
+
 		
 			const haspass = await argon2.hash(password)
 

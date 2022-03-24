@@ -3,9 +3,11 @@ import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import { useContext, useState, useEffect } from 'react'
 import { PostContext } from '../../contexts/PostContext'
+import {AuthContext} from '../../contexts/AuthContext'
 
 const UpdatePostModal = () => {
 	// Contexts
+	const { authState: { user } } = useContext(AuthContext)
 	const { showupdatepostmodal: { show }, setshowupdatepostmodal,postdata ,updatepost} = useContext(PostContext)
 	const setshow = () => {
 		setshowupdatepostmodal({show:false})

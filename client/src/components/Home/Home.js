@@ -70,7 +70,7 @@ useEffect(() => {
 						className='btn-floating'
 						onClick = {setshowAddpostmodal.bind(this,true)}
 					>
-						<img src={addicon} alt='add-post' width='60' height='60' />
+						<img src={addicon} alt='add-post' width='40' height='40' />
 					</Button>
 				</OverlayTrigger>
 

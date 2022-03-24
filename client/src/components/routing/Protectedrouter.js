@@ -8,7 +8,9 @@ import Navbar from '../layout/Navbar'
 const ProtectedRoute = ({ component: Component, ...rest }) => {
 	const {
 		authState: { authLoading, isAuthenticated }
+			
 	} = useContext(AuthContext)
+	console.log(isAuthenticated);
 
 	if (authLoading)
 		return (
@@ -21,13 +23,15 @@ const ProtectedRoute = ({ component: Component, ...rest }) => {
 		<Route
 			{...rest}
 			render={props =>
+				
 				isAuthenticated ? (
 					<>
 						<Navbar/>
 						<Component {...rest} {...props} />
 					</>
 				) : (
-					<Redirect to='/login' />
+						<Redirect to='/login' />
+					
 				)
 			}
 		/>

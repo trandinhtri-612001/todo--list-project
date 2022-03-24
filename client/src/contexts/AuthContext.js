@@ -18,13 +18,10 @@ const AuthContextProvider = ({ children }) => {
  
     
 // set auth
-    const loadUser =  () => {
-        dispatch({
-            type: 'LOAD_USER',
-            payload:true
-        })
+    const loadUser =  async() => {
+      
 
-        setTimeout(async() => {
+       
             if (localStorage[LOCAL_STOGARE_TOKEN_NAME]) {
            
             setaxiostoken(localStorage[LOCAL_STOGARE_TOKEN_NAME])
@@ -51,10 +48,10 @@ const AuthContextProvider = ({ children }) => {
 
             
         }
-        },1000)
+   
         
     }
-// useEffect(() => loadUser(), [])
+useEffect(() => loadUser(), [])
     
     //login
     const loginUser = async (userForm) => {
@@ -133,7 +130,8 @@ const AuthContextProvider = ({ children }) => {
         registerUser,
         authState,
         logoutUser,
-        updateuser
+        updateuser,
+        loadUser
     }
     console.log(children)
     return (
